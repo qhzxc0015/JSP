@@ -57,7 +57,14 @@ if(request.getParameter("flag")!=null&&"success".equals(request.getParameter("fl
 					  <tr>
 					    <td align="right" width="19%">信息:</td>
 					    <td width="35%"><span class="red">
-					    <textarea rows="4" cols="50" name='casename' ></textarea>
+					    <textarea rows="10" cols="50" name='casename' >姓名:
+身份证号:
+性别:
+出生日期：
+身高：
+体重:
+学习经历:
+</textarea>
 					    <input type="hidden" name="doctor" value="<%=request.getParameter("doctor") %>">
 				        *</span>
 				        </td>

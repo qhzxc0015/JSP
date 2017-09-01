@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>社区档案管理系统</title>
+<title>档案管理系统</title>
   <link rel="stylesheet" href="Style/css/bootstrap.min.css">  
    <script src="Style/js/jquery.min.js"></script>
    <script src="Style/js/bootstrap.min.js"></script>
@@ -43,9 +43,9 @@ function checkname(obj)
 
 
  <table width="684" border="0" cellspacing="0" cellpadding="0" >
- <h1 class="text-center">Community Archives Management System</h1>
+ <h1 class="text-center">Archives Management System</h1>
  <h1 class="text-center">
-				社区档案管理系统
+				档案管理系统
 			</h1>
   <tr><td>&nbsp</td></tr>
     <tr><td>&nbsp</td></tr>

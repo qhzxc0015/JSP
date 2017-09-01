@@ -13,7 +13,7 @@ System.out.println(basePath+"sss");
   <head>
     <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>社区档案管理系统</title>
+<title>档案管理系统</title>
 </head>
 <frameset rows="59,*" cols="*" frameborder="no" border="0" framespacing="0">
   <frame src="files/top.html" name="topFrame" scrolling="no" noresize="noresize" id="topFrame" title="topFrame" />

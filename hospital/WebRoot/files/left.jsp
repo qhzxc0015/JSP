@@ -7,7 +7,7 @@
 <html>
   <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>医疗健康咨询管理系统</title>
+<title>档案管理系统</title>
 <style type="text/css">
 <!--
 body {
