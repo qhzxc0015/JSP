@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">  
+	    <property name="location">
+	        <value>classpath:applicationContext.properties</value>  
+	    </property>
+	</bean>
+	<bean id="BID" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${db.driverClassName}">
+		</property>
+		<property name="url" value="${db.url}">
+		</property>
+		<property name="username" value="${db.username}"></property>
+		<property  name="password" value="${db.password}"></property>
+		<property name="initialSize" value="20"></property>
+		<property name="maxActive" value="100"></property>
+	</bean>
+	<!-- COMMON SERVICE -->
+
+	<bean id="nativeJdbcExtractor"
+	class="org.springframework.jdbc.support.nativejdbc.CommonsDbcpNativeJdbcExtractor" lazy-init="true"></bean>
+	<bean id="oracleLobHandler" class="org.springframework.jdbc.support.lob.OracleLobHandler" lazy-init="true">
+		<property name="nativeJdbcExtractor" ref="nativeJdbcExtractor"></property>
+	</bean>
+	<bean id="sfId" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="BID" />
+		</property>
+		<property name="lobHandler" ref="oracleLobHandler"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+				    org.hibernate.dialect.MySQLDialect 
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.connection.autocommit">true</prop>
+			</props>
+		</property>
+		<property name="mappingJarLocations">
+			<list>
+				<value>
+					WEB-INF/lib/org-fireflow-engine-*.jar
+				</value>
+			</list>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/pojo/TCase.hbm.xml</value>	
+				<value>com/pojo/TMessage.hbm.xml</value>	
+				<value>com/pojo/TNews.hbm.xml</value>	
+				<value>com/pojo/TOffice.hbm.xml</value>	
+				<value>com/pojo/TUser.hbm.xml</value>	
+			</list>
+		</property>
+		</bean>
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sfId"></property>
+	</bean>
+	<bean id="serviceiproxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" abstract="true">
+		<property name="transactionManager" ref="transactionManager"></property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="view*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="send*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="down*">PROPAGATION_REQUIRED</prop>
+				<prop key="up*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="merge*">PROPAGATION_REQUIRED</prop>
+				<prop key="pre*">PROPAGATION_REQUIRED</prop>
+				<prop key="set*">PROPAGATION_REQUIRED</prop>
+				<prop key="submit*">PROPAGATION_REQUIRED</prop>
+				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="load*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="query*">PROPAGATION_REQUIRED,readOnly</prop>
+			    <prop key="is*">PROPAGATION_REQUIRED</prop>
+			    <prop key="del*">PROPAGATION_REQUIRED</prop>
+			    <prop key="modify*">PROPAGATION_REQUIRED</prop>
+			    <prop key="insert*">PROPAGATION_REQUIRED</prop>
+			    <prop key="move*">PROPAGATION_REQUIRED</prop>
+			    <prop key="manage*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- ###############################################功能############################################ -->
+		 	<!-- 用户-->
+		 	<bean id="tUserDao" class="com.daoImpl.TUserDaoImpl" singleton="false">
+				<property name="sessionFactory" ref="sfId"></property>
+			</bean>
+			<bean id="tUserService" class="com.serviceImpl.TUserServiceImpl">
+				<property name="tUserDao" ref="tUserDao"></property>
+			</bean>
+			<bean id="tUserServiceImpproxy" parent="serviceiproxy">
+				<property name="target" ref="tUserService"></property>
+			</bean>
+			<!-- 病例管理 -->
+		 	<bean id="caseDao" class="com.daoImpl.TCaseDaoImpl" singleton="false">
+				<property name="sessionFactory" ref="sfId"></property>
+			</bean>
+			<bean id="caseService" class="com.serviceImpl.TCaseServiceImpl">
+				<property name="caseDao" ref="caseDao"></property>
+			</bean>
+			<bean id="caseServiceImpproxy" parent="serviceiproxy">
+				<property name="target" ref="caseService"></property>
+			</bean>	
+			<!-- 留言板管理 -->
+		 	<bean id="messageDao" class="com.daoImpl.TMessageDaoImpl" singleton="false">
+				<property name="sessionFactory" ref="sfId"></property>
+			</bean>
+			<bean id="messageService" class="com.serviceImpl.TMessageServiceImpl">
+				<property name="messageDao" ref="messageDao"></property>
+			</bean>
+			<bean id="messageServiceImpproxy" parent="serviceiproxy">
+				<property name="target" ref="messageService"></property>
+			</bean>
+			<!-- 医疗管理 -->
+		 	<bean id="newsDao" class="com.daoImpl.TNewsDaoImpl" singleton="false">
+				<property name="sessionFactory" ref="sfId"></property>
+			</bean>
+			<bean id="newsService" class="com.serviceImpl.TNewsServiceImpl">
+				<property name="newsDao" ref="newsDao"></property>
+			</bean>
+			<bean id="newsServiceImpproxy" parent="serviceiproxy">
+				<property name="target" ref="newsService"></property>
+			</bean>	
+			<!-- 部门管理 -->
+		 	<bean id="officeDao" class="com.daoImpl.TOfficeDaoImpl" singleton="false">
+				<property name="sessionFactory" ref="sfId"></property>
+			</bean>
+			<bean id="officeService" class="com.serviceImpl.TOfficeServiceImpl">
+				<property name="officeDao" ref="officeDao"></property>
+			</bean>
+			<bean id="officeServiceImpproxy" parent="serviceiproxy">
+				<property name="target" ref="officeService"></property>
+			</bean>
+			<!-- ACTION 配置 -->		
+			<bean name="/user" class="com.web.action.UserAction">
+				<property name="tUserService" ref="tUserServiceImpproxy"></property>
+				<property name="officeService" ref="officeServiceImpproxy"></property>
+			</bean>
+			<bean name="/message" class="com.web.action.MessageAction">
+				<property name="messageService" ref="messageServiceImpproxy"></property>
+			</bean>
+			<bean name="/office" class="com.web.action.OfficeAction">
+				<property name="officeService" ref="officeServiceImpproxy"></property>
+			</bean>
+			<bean name="/news" class="com.web.action.NewsAction">
+				<property name="newsService" ref="newsServiceImpproxy"></property>
+			</bean>
+			<bean name="/case" class="com.web.action.CaseAction">
+				<property name="caseService" ref="caseServiceImpproxy"></property>
+			</bean>
+</beans>		

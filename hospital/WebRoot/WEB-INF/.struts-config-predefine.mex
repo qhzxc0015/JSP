@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/company.do" location="684,0" dimension="358,84" />
+  <StrutsActivity path="/task.do" location="851,1662" dimension="358,84" />
+  <StrutsActivity path="/pack.do" location="152,1662" dimension="358,84" />
+  <StrutsActivity path="/qualityPara.do" location="389,277" dimension="358,84" />
+  <StrutsActivity path="/fee.do" location="275,1385" dimension="358,84" />
+  <StrutsActivity path="/deductT.do" location="284,1108" dimension="358,84" />
+  <StrutsActivity path="/deductQ.do" location="311,554" dimension="358,84" />
+  <StrutsActivity path="/time.do" location="311,831" dimension="358,84" />
+  <StrutsActivity path="/over.do" location="1246,1385" dimension="358,84" />
+  <StrutsActivity path="/holiday.do" location="1250,950" dimension="358,84" />
+  <StrutsActivity path="/predefine/outSourceCompany/outSourceCompany_view.jsp" location="0,184" dimension="358,48" />
+  <StrutsActivity path="/predefine/outSourceCompany/outSourceCompany_add.jsp" location="458,184" dimension="352,48" />
+  <StrutsActivity path="/predefine/outSourceCompany/outSourceCompany_query.jsp" location="910,184" dimension="364,48" />
+  <StrutsActivity path="/predefine/outSourceCompany/outSourceCompany_modify.jsp" location="1374,184" dimension="370,48" />
+  <StrutsActivity path="/predefine/taskRate/taskRate_query.jsp" location="711,1846" dimension="268,48" />
+  <StrutsActivity path="/predefine/taskRate/taskRate_modify.jsp" location="1079,1846" dimension="274,48" />
+  <StrutsActivity path="/predefine/packParam/packParam_query.jsp" location="0,1846" dimension="280,48" />
+  <StrutsActivity path="/predefine/packParam/packParam_modify.jsp" location="380,1846" dimension="286,48" />
+  <StrutsActivity path="/predefine/qualityParam/quality_para_query.jsp" location="0,461" dimension="316,48" />
+  <StrutsActivity path="/predefine/qualityParam/quality_para_add.jsp" location="416,461" dimension="304,48" />
+  <StrutsActivity path="/predefine/qualityParam/quality_para_modify.jsp" location="820,461" dimension="322,48" />
+  <StrutsActivity path="/predefine/feeStd/feeStd_add.jsp" location="0,1569" dimension="232,48" />
+  <StrutsActivity path="/predefine/feeStd/feeStd_query.jsp" location="332,1569" dimension="244,48" />
+  <StrutsActivity path="/predefine/feeStd/feeStd_modify.jsp" location="676,1569" dimension="250,48" />
+  <StrutsActivity path="/predefine/feeDeduct/time_add.jsp" location="0,1292" dimension="238,48" />
+  <StrutsActivity path="/predefine/feeDeduct/time_query.jsp" location="338,1292" dimension="250,48" />
+  <StrutsActivity path="/predefine/feeDeduct/time_modify.jsp" location="688,1292" dimension="256,48" />
+  <StrutsActivity path="/predefine/feeDeduct/quality_add.jsp" location="0,738" dimension="256,48" />
+  <StrutsActivity path="/predefine/feeDeduct/quality_query.jsp" location="356,738" dimension="268,48" />
+  <StrutsActivity path="/predefine/feeDeduct/quality_modify.jsp" location="724,738" dimension="274,48" />
+  <StrutsActivity path="/predefine/timeParam/timelinePara_add.jsp" location="1550,450" dimension="286,48" />
+  <StrutsActivity path="/predefine/timeParam/timelinePara_query.jsp" location="1250,550" dimension="298,48" />
+  <StrutsActivity path="/predefine/timeParam/timelinePara_modify.jsp" location="1250,650" dimension="304,48" />
+  <StrutsActivity path="/predefine/timeParam/overTime_add.jsp" location="1250,750" dimension="262,48" />
+  <StrutsActivity path="/predefine/timeParam/overTime_query.jsp" location="950,850" dimension="274,48" />
+  <StrutsActivity path="/predefine/timeParam/overTime_modify.jsp" location="1550,850" dimension="280,48" />
+  <StrutsActivity path="/predefine/timeParam/holiday_query.jsp" location="950,1150" dimension="268,48" />
+  <StrutsActivity path="/predefine/time/timelinePara_add.jsp" location="0,1015" dimension="256,48" />
+  <StrutsActivity path="/predefine/time/timelinePara_query.jsp" location="356,1015" dimension="268,48" />
+  <StrutsActivity path="/predefine/time/timelinePara_modify.jsp" location="724,1015" dimension="274,48" />
+  <StrutsActivity path="/predefine/time/overTime_add.jsp" location="971,1569" dimension="232,48" />
+  <StrutsActivity path="/predefine/time/overTime_query.jsp" location="1303,1569" dimension="244,48" />
+  <StrutsActivity path="/predefine/time/overTime_modify.jsp" location="1647,1569" dimension="250,48" />
+  <StrutsActivity path="/predefine/qualityParam/show_field_name.jsp" />
+  <StrutsTransition id="/fee.do,edit,/predefine/feeStd/feeStd_modify.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="573,1469" />
+      <AbsolutePoint location="573,1519" />
+      <AbsolutePoint location="801,1519" />
+      <AbsolutePoint location="801,1569" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/deductQ.do,query,/predefine/feeDeduct/quality_query.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="490,638" />
+      <AbsolutePoint location="490,738" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/deductT.do,query,/predefine/feeDeduct/time_query.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="463,1192" />
+      <AbsolutePoint location="463,1292" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/deductT.do,edit,/predefine/feeDeduct/time_modify.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="582,1192" />
+      <AbsolutePoint location="582,1242" />
+      <AbsolutePoint location="816,1242" />
+      <AbsolutePoint location="816,1292" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/over.do,edit,/predefine/timeParam/overTime_modify.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1425,1427" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/company.do,view,/predefine/outSourceCompany/outSourceCompany_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="728,84" />
+      <AbsolutePoint location="728,119" />
+      <AbsolutePoint location="179,119" />
+      <AbsolutePoint location="179,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/over.do,add,/predefine/timeParam/overTime_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1425,1427" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/company.do,query,/predefine/outSourceCompany/outSourceCompany_query.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="907,84" />
+      <AbsolutePoint location="907,149" />
+      <AbsolutePoint location="1092,149" />
+      <AbsolutePoint location="1092,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/qualityPara.do,addQualityPara,/predefine/qualityParam/quality_para_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="568,361" />
+      <AbsolutePoint location="568,461" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/time.do,edit,/predefine/timeParam/timelinePara_modify.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="490,873" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/time.do,query,/predefine/timeParam/timelinePara_query.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="490,873" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/fee.do,add,/predefine/feeStd/feeStd_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="334,1469" />
+      <AbsolutePoint location="334,1519" />
+      <AbsolutePoint location="116,1519" />
+      <AbsolutePoint location="116,1569" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/over.do,query,/predefine/timeParam/overTime_query.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1425,1427" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/task.do,query,/predefine/taskRate/taskRate_query.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="941,1746" />
+      <AbsolutePoint location="941,1796" />
+      <AbsolutePoint location="845,1796" />
+      <AbsolutePoint location="845,1846" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pack.do,query,/predefine/packParam/packParam_query.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="242,1746" />
+      <AbsolutePoint location="242,1796" />
+      <AbsolutePoint location="140,1796" />
+      <AbsolutePoint location="140,1846" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/holiday.do,query,/predefine/timeParam/holiday_query.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1429,992" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/deductT.do,add,/predefine/feeDeduct/time_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="343,1192" />
+      <AbsolutePoint location="343,1242" />
+      <AbsolutePoint location="119,1242" />
+      <AbsolutePoint location="119,1292" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/qualityPara.do,showFieldName,/predefine/qualityParam/show_field_name.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="568,319" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/task.do,edit,/predefine/taskRate/taskRate_modify.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1120,1746" />
+      <AbsolutePoint location="1120,1796" />
+      <AbsolutePoint location="1216,1796" />
+      <AbsolutePoint location="1216,1846" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/qualityPara.do,queryQualityPara,/predefine/qualityParam/quality_para_query.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="448,361" />
+      <AbsolutePoint location="448,411" />
+      <AbsolutePoint location="158,411" />
+      <AbsolutePoint location="158,461" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/company.do,add,/predefine/outSourceCompany/outSourceCompany_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="818,84" />
+      <AbsolutePoint location="818,149" />
+      <AbsolutePoint location="634,149" />
+      <AbsolutePoint location="634,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/deductQ.do,add,/predefine/feeDeduct/quality_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="370,638" />
+      <AbsolutePoint location="370,688" />
+      <AbsolutePoint location="128,688" />
+      <AbsolutePoint location="128,738" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/fee.do,query,/predefine/feeStd/feeStd_query.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="454,1469" />
+      <AbsolutePoint location="454,1569" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/time.do,add,/predefine/timeParam/timelinePara_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="490,873" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pack.do,edit,/predefine/packParam/packParam_modify.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="421,1746" />
+      <AbsolutePoint location="421,1796" />
+      <AbsolutePoint location="523,1796" />
+      <AbsolutePoint location="523,1846" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/company.do,edit,/predefine/outSourceCompany/outSourceCompany_modify.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="997,84" />
+      <AbsolutePoint location="997,119" />
+      <AbsolutePoint location="1559,119" />
+      <AbsolutePoint location="1559,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/qualityPara.do,modifyQualityPara,/predefine/qualityParam/quality_para_modify.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="687,361" />
+      <AbsolutePoint location="687,411" />
+      <AbsolutePoint location="981,411" />
+      <AbsolutePoint location="981,461" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/deductQ.do,edit,/predefine/feeDeduct/quality_modify.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="609,638" />
+      <AbsolutePoint location="609,688" />
+      <AbsolutePoint location="861,688" />
+      <AbsolutePoint location="861,738" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/qualityPara.do,showFieldName,/predefine/qualityParam/quality_para_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="538,361" />
+      <AbsolutePoint location="538,461" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

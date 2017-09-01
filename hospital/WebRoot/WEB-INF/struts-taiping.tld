@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+<tlibversion>1.2</tlibversion>
+<jspversion>1.1</jspversion>
+<shortname>taip</shortname>
+<uri>http://struts.apache.org/tags-taip</uri>
+<tag>
+  <name>equal</name>
+  <tagclass>com.tplife.wblr.utils.ValueEqual</tagclass>
+  <bodycontent>jsp</bodycontent>
+    <info>判断两个值是否相等</info>
+  <attribute>
+    <name>name</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>property</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>value</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+</tag>
+
+<tag>
+  <name>bean</name>
+  <tagclass>com.tplife.wblr.utils.CreateBean</tagclass>
+  <bodycontent>JSP</bodycontent>
+  <info>创建了一个bean</info>
+  <attribute>
+    <name>name</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>className</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+</tag>
+<tag>
+  <name>setProperty</name>
+  <tagclass>com.tplife.wblr.utils.Setproperty</tagclass>
+  <bodycontent>JSP</bodycontent>
+  <info>向页面作用域存放一个bean</info>
+  <attribute>
+  <name>id</name>
+  <required>true</required>
+  </attribute>
+  <attribute>
+    <name>name</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>value</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+</tag>
+<tag>
+  <name>getValue</name>
+  <tagclass>com.tplife.wblr.utils.GetValue</tagclass>
+  <bodycontent>JSP</bodycontent>
+  <info>取值</info>
+  <attribute>
+    <name>value</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+</tag>
+</taglib>

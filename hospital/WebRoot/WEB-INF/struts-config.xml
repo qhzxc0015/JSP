@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+  <data-sources />
+  <form-beans >
+  		<form-bean name="officeForm" type="com.web.form.TOfficeForm" />
+  		<form-bean name="newsForm" type="com.web.form.TNewsForm" />
+  		<form-bean name="tUserForm" type="com.web.form.TUserForm" />
+  		<form-bean name="caseForm" type="com.web.form.TCaseForm" />
+  		<form-bean name="messageForm" type="com.web.form.TMessageForm" />
+  </form-beans>
+  <global-exceptions>
+  </global-exceptions>
+  <global-forwards>
+  		<forward name="error" path="/login.jsp"></forward>
+  </global-forwards>
+  <action-mappings >
+  	 <action
+      attribute="officeForm"
+      name="officeForm"
+      parameter="mtype"
+      path="/office"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy" >
+	      <forward name="queryOffices" path="/files/office/list.jsp"></forward>
+	      <forward name="preaddOffice" path="/files/office/add.jsp"></forward>
+	      <forward name="delOffice" path="/office.do?mtype=queryOffices"></forward>
+	      <forward name="addOffice" path="/office.do?mtype=queryOffices"></forward>
+	      <forward name="updateOffice" path="/office.do?mtype=queryOffices"></forward>
+	      <forward name="preupdateOffice" path="/files/office/update.jsp"></forward>
+	      <forward name="viewOffice" path="/files/office/view.jsp"></forward>
+      </action>
+      <action
+      attribute="newsForm"
+      name="newsForm"
+      parameter="mtype"
+      path="/news"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy" >
+	      <forward name="queryNewss" path="/files/news/list.jsp"></forward>
+	      <forward name="preaddNews" path="/files/news/add.jsp"></forward>
+	      <forward name="delNews" path="/news.do?mtype=queryNewss"></forward>
+	      <forward name="addNews" path="/news.do?mtype=queryNewss"></forward>
+	      <forward name="updateNews" path="/news.do?mtype=queryNewss"></forward>
+	      <forward name="preupdateNews" path="/files/news/update.jsp"></forward>
+      </action>
+      <action
+      attribute="caseForm"
+      name="caseForm"
+      parameter="mtype"
+      path="/case"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy" >
+	      <forward name="queryCases" path="/files/case/list.jsp"></forward>
+	      <forward name="saveCase" path="/case.do?mtype=queryCases"></forward>
+	      <forward name="delCase" path="/case.do?mtype=queryCases"></forward>
+	      <forward name="addCase" path="/case.do?mtype=queryCases"></forward>
+	      <forward name="doctorpreupdateCase" path="/files/case/doctorupdate.jsp"></forward>
+	      <forward name="userpreupdateCase" path="/files/case/userupdate.jsp"></forward>
+	      <forward name="updateCase" path="/case.do?mtype=queryCases"></forward>
+      </action>
+      <action
+      attribute="tUserForm"
+      name="tUserForm"
+      parameter="mtype"
+      path="/user"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy" >
+	      <forward name="success" path="/index.jsp"></forward>
+	      <forward name="queryUsers" path="/files/user/userlist.jsp"></forward>
+	      <forward name="queryDoctors" path="/files/user/doctorlist.jsp"></forward>
+	      <forward name="delUser" path="/user.do?mtype=queryUsers"></forward>
+	      <forward name="delDoctor" path="/user.do?mtype=queryDoctors"></forward>
+	      <forward name="addDoctor" path="/user.do?mtype=queryDoctors"></forward>
+	      <forward name="addUser" path="/login.jsp"></forward>
+	      <forward name="errorAdmin" path="/files/user/add.jsp"></forward>
+	      <forward name="errorUser" path="/files/user/add.jsp"></forward>
+	      <forward name="errorDoctor" path="/register.jsp"></forward>
+	      <forward name="updateUser" path="/files/mainfra.html"></forward>
+	      <forward name="adminUpdateUser" path="/user.do?mtype=queryUsers"></forward>
+	      <forward name="preupdateUser" path="/files/user/userupdate.jsp"></forward>
+	      <forward name="preupdateDoctor" path="/files/user/doctorupdate.jsp"></forward>
+	      <forward name="preupdateAdmin" path="/files/user/adminupdate.jsp"></forward>
+	      <forward name="preAddDoctor" path="/files/user/add.jsp"></forward>
+      </action>
+      <action
+      attribute="messageForm"
+      name="messageForm"
+      parameter="mtype"
+      path="/message"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy" >
+	      <forward name="queryMessages" path="/files/message/list.jsp"></forward>
+	      <forward name="preaddMessage" path="/files/message/add.jsp"></forward>
+	      <forward name="delMessage" path="/message.do?mtype=queryMessages"></forward>
+	      <forward name="addMessage" path="/message.do?mtype=queryMessages"></forward>
+	      <forward name="updateMessage" path="/message.do?mtype=queryMessages"></forward>
+	      <forward name="preupdateMessage" path="/files/message/update.jsp"></forward>
+      </action>
+  </action-mappings>
+</struts-config>
