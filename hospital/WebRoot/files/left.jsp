@@ -114,7 +114,7 @@ function list(idstr){
 					<tr>
 						<td width="8%"><img name="img1" id="img1" src="../images/ico04.gif" width="8" height="11" /></td>
 						<td width="92%">
-								<a href="/hospital/case.do?mtype=queryCases" target="mainFrame" class="left-font03" onClick="tupian('11');" >档案管理</a></td>
+								<a href="/hospital/case.do?mtype=queryCases" target="mainFrame" class="left-font03" onClick="tupian('11');" >机房管理</a></td>
 					</tr>
 				</table>
 			</td>
@@ -127,7 +127,7 @@ function list(idstr){
 					<tr>
 						<td width="8%"><img name="img2" id="img2" src="../images/ico04.gif" width="8" height="11" /></td>
 						<td width="92%">
-								<a href="/hospital/office.do?mtype=queryOffices" target="mainFrame" class="left-font03" onClick="tupian('12');" >部门管理</a></td>
+								<a href="/hospital/office.do?mtype=queryOffices" target="mainFrame" class="left-font03" onClick="tupian('12');" >电脑管理</a></td>
 					</tr>
 				</table>
 			</td>
@@ -153,7 +153,7 @@ function list(idstr){
 					<tr>
 						<td width="8%"><img name="img2" id="img2" src="../images/ico04.gif" width="8" height="11" /></td>
 						<td width="92%">
-								<a href="/hospital/message.do?mtype=queryMessages" target="mainFrame" class="left-font03" onClick="tupian('12');" >留言板</a></td>
+								<a href="/hospital/message.do?mtype=queryMessages" target="mainFrame" class="left-font03" onClick="tupian('12');" >系统设置</a></td>
 					</tr>
 				</table>
 			</td>
@@ -172,19 +172,7 @@ function list(idstr){
 			</td>
           </tr>		  
         </TABLE> -->
-        <TABLE width="100%" border="0" cellpadding="0" cellspacing="0" class="left-table03">
-          <tr>
-            <td height="25">
-				<table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
-					<tr>
-						<td width="8%"><img name="img2" id="img2" src="../images/ico04.gif" width="8" height="11" /></td>
-						<td width="92%">
-								<a href="/hospital/user.do?mtype=queryUsers" target="mainFrame" class="left-font03" onClick="tupian('12');" >用户管理</a></td>
-					</tr>
-				</table>
-			</td>
-          </tr>		  
-        </TABLE>
+
         <%}%>
         <%if("1".equals((String)session.getAttribute("power"))){ %>    
 		<TABLE width="100%" border="0" cellpadding="0" cellspacing="0" class="left-table03">
